@@ -1,18 +1,16 @@
 <template>
-  <div class="container">
-
+  <div class="row">
+    <app-quote v-for="quote in quotes">{{ quote }}</app-quote>
   </div>
 </template>
 
 <script>
+  import Quote from './Quote.vue';
+
   export default {
-    data: function() {
-      return {
-          quotes: [
-            'Just a Quote to see something'
-          ],
-          maxQuotes: 10
-      }
+    props: ['quotes'],
+    components: {
+      appQuote: Quote
     }
   }
 </script>
